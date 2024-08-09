@@ -29,11 +29,11 @@ lerna-debug.log*
 *.sublime-workspace
 
 # IDE - VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+# .vscode/*
+# !.vscode/settings.json
+# !.vscode/tasks.json
+# !.vscode/launch.json
+# !.vscode/extensions.json
 
 # dotenv environment variable files
 .env
@@ -69,7 +69,7 @@ report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 **/*.launch
 **/.settings/
 **/*.sublime-workspace
-**/.vscode/
+# **/.vscode/
 **/.temp/
 **/.tmp/
 **/pids/

@@ -1,0 +1,9 @@
+{
+  "editor.tabSize": 2,
+  "typescript.preferences.quoteStyle": "double",
+  "editor.codeActionsOnSave": {
+    // https://code.visualstudio.com/updates/v1_85#_code-actions-on-save-and-auto
+    "source.fixAll": "always",
+    "source.fixAll.eslint": "always"
+  },
+}

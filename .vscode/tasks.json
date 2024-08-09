@@ -1,0 +1,23 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "rm dist - book-crud-server",
+      "command": "rm -rf ${workspaceFolder}/book-crud-server/dist",
+      "icon": {
+        "id": "trashcan"
+      },
+      "type": "shell",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "revealProblems": "onProblem",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      }
+    }
+  ]
+}

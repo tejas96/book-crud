@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Server via NPM",
+      "localRoot": "${workspaceFolder}/book-crud-server",
+      "cwd": "${workspaceFolder}/book-crud-server",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "start:debug"],
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "node",
+      "envFile": "${workspaceFolder}/book-crud-server/.env",
+      "outputCapture": "std",
+      "runtimeVersion": "16.15.1",
+      "preLaunchTask": "rm dist - server",
+      "outFiles": [
+        "${workspaceFolder}/book-crud-server/dist/**/*.js",
+        "!**/node_modules/**"
+      ]
+    },
+  ]
+}
