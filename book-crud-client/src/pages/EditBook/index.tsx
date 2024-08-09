@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import { Container, Typography } from '@mui/material';
-import { BookForm } from '../../components';
-import { BookData } from '../../types/book';
-import axiosInstance from '../../config/axios';
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { Container, Typography } from "@mui/material";
+import { BookForm } from "../../components";
+import { BookData } from "../../types/book";
+import axiosInstance from "../../config/axios";
 
 const EditBook: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -19,13 +19,15 @@ const EditBook: React.FC = () => {
   }, [id]);
 
   const handleEditBook = async (data: BookData) => {
-    const {data:res} = await axiosInstance.put(`/api/v1/books/${id}`, data);
+    const { data: res } = await axiosInstance.put(`/api/v1/books/${id}`, data);
     navigate(`/?search=${res.name}`);
   };
 
   return (
     <Container>
-      <Typography variant="h4" gutterBottom>Edit Book</Typography>
+      <Typography variant="h4" gutterBottom>
+        Edit Book
+      </Typography>
       {book && <BookForm onSubmit={handleEditBook} initialData={book} />}
     </Container>
   );

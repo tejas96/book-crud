@@ -1,6 +1,6 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import { AddBook, BookDetails, BookList, EditBook, ErrorPage } from '../pages';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import { AddBook, BookDetails, BookList, EditBook, ErrorPage } from "../pages";
 
 const BookCrudAppRouter: React.FC = () => {
   return (

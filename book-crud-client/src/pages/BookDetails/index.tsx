@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import {  useParams } from 'react-router-dom';
-import { Container, Typography, Paper, Stack, IconButton } from '@mui/material';
-import axiosInstance from '../../config/axios';
-import { Edit } from '@mui/icons-material';
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { Container, Typography, Paper, Stack, IconButton } from "@mui/material";
+import axiosInstance from "../../config/axios";
+import { Edit } from "@mui/icons-material";
 
 interface Book {
   name: string;
@@ -21,7 +21,7 @@ const BookDetails: React.FC = () => {
         const { data } = await axiosInstance.get(`/api/v1/books/${id}`);
         setBook(data);
       } catch (error) {
-        console.error('Error fetching book details:', error);
+        console.error("Error fetching book details:", error);
       }
     };
 
@@ -34,14 +34,26 @@ const BookDetails: React.FC = () => {
 
   return (
     <Container>
-      <Stack direction={'row'} justifyContent={'space-between'} alignItems={'center'}>
-        <Typography variant="h4" gutterBottom>Book Details</Typography>
-        <IconButton  href={`/edit/${id}`}><Edit/></IconButton>
+      <Stack
+        direction={"row"}
+        justifyContent={"space-between"}
+        alignItems={"center"}
+      >
+        <Typography variant="h4" gutterBottom>
+          Book Details
+        </Typography>
+        <IconButton href={`/edit/${id}`}>
+          <Edit />
+        </IconButton>
       </Stack>
-      <Paper style={{ padding: '16px' }}>
+      <Paper style={{ padding: "16px" }}>
         <Typography variant="h5">{book.name}</Typography>
-        <Typography variant="body1" paragraph>{book.description}</Typography>
-        <Typography variant="body2">Published on: {new Date(book.publishDate).toDateString()}</Typography>
+        <Typography variant="body1" paragraph>
+          {book.description}
+        </Typography>
+        <Typography variant="body2">
+          Published on: {new Date(book.publishDate).toDateString()}
+        </Typography>
         <Typography variant="body2">Price: ${book.price}</Typography>
       </Paper>
     </Container>

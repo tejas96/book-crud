@@ -18,7 +18,7 @@ Welcome to the Book CRUD application! This project allows users to manage a coll
 
 ```bash
 git clone git@github.com:tejas96/book-crud.git
-cd book-crud-app
+cd book-crud
 ```
 
 ### 2. Install Dependencies
@@ -26,14 +26,14 @@ cd book-crud-app
 For the backend:
 
 ```bash
-cd server
+cd book-crud-server
 npm install
 ```
 
 For the frontend:
 
 ```bash
-cd client
+cd book-crud-client
 npm install
 ```
 
@@ -42,13 +42,20 @@ npm install
 Create a `.env` file in the `server` directory and add the following variables:
 
 ```env
-DATABASE_URL=your-postgres-database-url
+NODE_ENV=local
+
+POSTGRES_HOST=localhost
+POSTGRES_PORT=5432
+POSTGRES_USER=<user-name>
+POSTGRES_PASSWORD=<passowrd>
+POSTGRES_DATABASE=bookcrud
+POSTGRES_CONNECTION_POOL_SIZE=50
 ```
 
 For the frontend, create a `.env` file in the `client` directory and add:
 
 ```env
-REACT_APP_API_URL=http://localhost:5000
+REACT_APP_API_URL=http://localhost:3001
 ```
 
 ## 🛠️ Running the Application
@@ -58,17 +65,11 @@ REACT_APP_API_URL=http://localhost:5000
 1. **Start the Backend Server:**
 
     ```bash
-    cd server
+    cd book-crud-server
     npm run start:dev
     ```
 
 2. **Migrations:**
-
-    - **Generate Migration:**
-
-        ```bash
-        npm run migration:generate --name=<migration_name>
-        ```
 
     - **Run Migrations:**
 
@@ -76,7 +77,7 @@ REACT_APP_API_URL=http://localhost:5000
         npm run migration:run
         ```
 
-    - **Revert Migration:**
+    - **Revert Migration(incase not work):**
 
         ```bash
         npm run migration:revert
@@ -87,7 +88,7 @@ REACT_APP_API_URL=http://localhost:5000
 1. **Start the Frontend Development Server:**
 
     ```bash
-    cd client
+    cd book-crud-client
     npm start
     ```
 
@@ -96,7 +97,7 @@ REACT_APP_API_URL=http://localhost:5000
 To seed the database with 100 book records, run the following script:
 
 ```bash
-cd server
+cd book-crud-server
 npm run seed
 ```
 
@@ -137,14 +138,14 @@ Add your tests in the `client` and `server` directories. Run tests using:
 ### Backend
 
 ```bash
-cd server
+cd book-crud-server
 npm run test
 ```
 
 ### Frontend
 
 ```bash
-cd client
+cd book-crud-client
 npm test
 ```
 
